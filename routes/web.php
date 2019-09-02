@@ -2,6 +2,10 @@
 
 Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
 
+    Route::post('deposit', 'BalanceController@depositStore')->name('deposit.store');
+
+    Route::get('deposit', 'BalanceController@deposit')->name('balance.deposit');
+
     Route::get('balance', 'BalanceController@index')->name('admin.balancee');
 
     Route::get('/', 'AdminController@index')->name('admin.home');
