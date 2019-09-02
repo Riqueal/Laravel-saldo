@@ -4,7 +4,6 @@
 
 @section('content_header')
     <h1>Fazer Recarga</h1>
-    <h1>Saldo</h1>
     <ol class='breadcrumb'>
         <li><a href="http://">Dashboard</a></li>
         <li><a href="http://">Saldo</a></li>
@@ -14,14 +13,14 @@
 
 @section('content')
     <div class="box">
-        <div class="box-header">
+        <!-- <div class="box-header">
             <h3>Fazer Recarga</h3>
-        </div>
+        </div> -->
         <div class="box-body">
             <form action="{{ route('deposit.store')}}" method="POST">
                 {!! csrf_field() !!}
                 <div id="form-group">
-                    <input type="text" placeholder="Valor Recarga" class="form-control">
+                    <input type="text" name="value" placeholder="Valor Recarga" class="form-control">
                 </div>
                 <br>
                 <div id="form-group">
