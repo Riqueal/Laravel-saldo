@@ -128,15 +128,31 @@ return [
     */
 
     'menu' => [
-        [
+        /* [
             'text' => 'search',
             'search' => true,
         ],
-        ['header' => 'MENU'],
+        ['header' => 'MENU'], */
         [
-            'text'        => 'Home',
+            'text'        => 'Dashboard',
             'url'         => 'admin',
-            'icon'        => 'far fa-file',
+            'icon'        => 'fas fa-chart-line',
+        ],
+        [
+            'text'          => 'Financeiro',
+            'icon'          => 'fas fa-money-bill-alt',
+            'submenu'       => [
+                [
+                    'text'  => 'Saldo',
+                    'url'   => 'admin/balance',
+                    'icon'  => 'fas fa-credit-card',
+                ],
+                [
+                    'text'  => 'Histórico',
+                    'url'   => 'admin/historic',
+                    'icon'  => 'fas fa-history',
+                ]
+            ]
         ],
     ],
 
