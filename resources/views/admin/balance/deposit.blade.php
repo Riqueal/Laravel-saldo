@@ -25,7 +25,7 @@
                 </div>
                 <br>
                 <div id="form-group">
-                    <button type="submit" class="bth btn-success">Recarregar</button>
+                    <button type="submit" class="btn btn-success">Recarregar</button>
                 </div>
             </form>
         </div>
