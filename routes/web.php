@@ -6,7 +6,7 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 
     Route::get('deposit', 'BalanceController@deposit')->name('balance.deposit');
 
-    Route::get('balance', 'BalanceController@index')->name('admin.balancee');
+    Route::get('balance', 'BalanceController@index')->name('admin.balance');
 
     Route::get('/', 'AdminController@index')->name('admin.home');
 

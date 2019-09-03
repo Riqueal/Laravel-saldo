@@ -17,14 +17,7 @@
             <h3>Fazer Recarga</h3>
         </div> -->
         <div class="box-body">
-            @if ($errors->any())
-                <div class="alert alert-warning">
-                    @foreach ($errors->all() as $error)
-                        <p>{{ $error}}</p>
-                    @endforeach
-                </div>
-
-            @endif
+            @include('admin.includes.alerts')
             <form action="{{ route('deposit.store')}}" method="POST">
                 {!! csrf_field() !!}
                 <div id="form-group">
