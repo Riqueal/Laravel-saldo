@@ -37,7 +37,7 @@
                             @if($historic->user_id_transaction)
                                 {{ $historic->userSender->name }}
                             @else
-
+                                -
                             @endif                            
                         </td>
                     </tr>
@@ -45,6 +45,7 @@
                     @endforelse
                 </tbody>
             </table>
+            {!! $historics->links() !!}
         </div>
     </div>
 @stop
