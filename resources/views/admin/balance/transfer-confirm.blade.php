@@ -20,12 +20,14 @@
         <div class="box-body">
             @include('admin.includes.alerts')
             <p><strong>Recebedor: </strong>{{ $sender->name }}</p>
+            <p><strong>Seu Saldo Atual: </strong>R$ {{ number_format($balance->amount, 2, '.', '')}}</p>
+            
             <form action="{{ route('transfer.store')}}" method="POST">
                 {!! csrf_field() !!}
 
-                <input type="hidden" name="sender-id" value="{{ $sender->id }}">
+                <input type="hidden" name="sender_id" value="{{ $sender->id }}">
                 <div id="form-group">
-                    <input type="text" name="balance" placeholder="Valor:" class="form-control">
+                    <input type="text" name="value" placeholder="Valor:" class="form-control">
                 </div>
                 <br>
                 <div id="form-group">
