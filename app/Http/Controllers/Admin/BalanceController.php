@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MoneyValidationFormRequest;
 use App\Models\Balance;
+use App\User;
 
 class BalanceController extends Controller
 {
@@ -79,11 +80,26 @@ class BalanceController extends Controller
 
     }
 
-    public function confirmTransfer(Request $request)
+    public function confirmTransfer(Request $request, User $user)
     {
 
-        dd($request->all());
+        if(!$sender = $user->getSender($request->sender))
+            return redirect()
+                ->back()
+                ->with('error', 'Usuário informado não foi encontrado!');
 
+        if($sender->id === auth()->user()->id)
+            return redirect()
+                ->back()
+                ->with('error', 'Não é possível realizar a transferência para você mesmo!');
+
+        return view('admin.balance.transfer-confirm', compact('sender'));
+        
+    }
+
+    public function transferStore(Request $request)
+    {
+        dd($request->all());
     }
 
 }
