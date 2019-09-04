@@ -11,7 +11,7 @@ use App\User;
 
 class BalanceController extends Controller
 {
-    private $totalPage = 2;
+    private $totalPage = 10;
 
     public function index()
     {
